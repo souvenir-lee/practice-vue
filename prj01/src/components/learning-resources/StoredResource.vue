@@ -20,11 +20,6 @@ export default {
   components: {
     LearningResource
   },
-  data() {
-    return {
-
-    }
-  }
 }
 </script>
 
