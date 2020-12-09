@@ -13,6 +13,7 @@
         {{ emailAddress }}
       </li>
     </ul>
+    <button @click="$emit('delete', id)">Delete</button>
   </li>
 </template>
 
@@ -47,23 +48,21 @@ export default {
       // }
     }
   },
-  // emits: [ 'toggle-favorite'],
-  emits: {
-    'toggle-favorite' : function(id) {
-      if(id) {
-        return true
-      } else {
-        console.warn('Id is missing')
-        return false
-      }
-    }
-  },
+  emits: [ 'toggle-favorite', 'delete'],
+  // emits: {
+  //   'toggle-favorite' : function(id) {
+  //     if(id) {
+  //       return true
+  //     } else {
+  //       console.warn('Id is missing')
+  //       return false
+  //     }
+  //   }
+  // },
   data() {
     return {
       detailsAreVisible: false,
       //friendIsFavorite: this.isFavorite 
-      //props를 data로 새로 선언하여 변경가능하도록 함
-      //그러나 $emit을 이용하여 부모 컴포넌트에서 변경하여 내려오도록 하였기 때문에 삭제
     };
   },
   methods: {
@@ -74,7 +73,7 @@ export default {
       this.$emit('toggle-favorite', this.id)
       //toggle-favorite : app단에서 설정된 함수가 porps로 내려온 함수
       //this.friendIsFavorite = !this.friendIsFavorite
-    }
+    },
   }
 };
 </script>
