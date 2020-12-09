@@ -1,14 +1,16 @@
 <template>
-  <base-container title="Vuex" v-if="isAuth">
-    <the-counter></the-counter>
-    <favorite-value></favorite-value>
-    <button @click="addOne">Add 10</button>
-    <change-counter></change-counter>
-  </base-container>
+  <div>
+    <base-container title="Vuex" v-if="isAuth">
+      <the-counter></the-counter>
+      <favorite-value></favorite-value>
+      <button @click="addOne">Add 10</button>
+      <change-counter></change-counter>
+    </base-container>
 
-  <base-container title="Auth">
-    <user-auth> </user-auth>
-  </base-container>
+    <base-container title="Auth">
+      <user-auth> </user-auth>
+    </base-container>
+  </div>
 </template>
 
 <script>
